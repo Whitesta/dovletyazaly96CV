@@ -1,0 +1,77 @@
+﻿@using MyCV.Models.Entity
+@model List<Communication>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@{ string color = "";}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        
+                        <div class="card-body">
+                            <div class="tab-content">
+                                
+                                @foreach (var item in Model)
+                                {
+                                    if (item.Id % 2 == 0)
+                                    {
+                                        color = "bg-pink";
+                                    }
+                                    else
+                                    {
+                                        color = "bg-success";
+                                    }
+
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        <!-- timeline time label -->
+                                        <div class="time-label">
+                                            <span class="@color">
+                                               @item.Date
+                                            </span>
+                                        </div>
+                                      
+                                      
+                                        <div>
+                                            <i class="fas fa-comments bg-info"></i>
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="far fa-clock"></i> @item.Mail</span>
+                                                <h3 class="timeline-header"><a href="#">@item.FirstNameLastName</a> @item.Title</h3>
+                                                <div class="timeline-body">
+                                                    @item.Message
+                                                </div>
+                                                <div class="timeline-footer">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                       
+                                    </div>
+                                }
+                               
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>
+

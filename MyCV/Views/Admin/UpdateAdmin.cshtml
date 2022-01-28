@@ -1,0 +1,19 @@
+﻿@model MyCV.Models.Entity.Admin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Update Admin Page </h4>
+<form method="post">
+
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" }) <br />
+    @Html.Label("UserName")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })<br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" }) <br />
+    <button class="btn btn-info">Save</button>
+</form>
+

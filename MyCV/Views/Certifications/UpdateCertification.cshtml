@@ -1,0 +1,18 @@
+﻿@model MyCV.Models.Entity.Certifications
+@{
+    ViewBag.Title = "UpdateCertification";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Update Certification Page </h4>
+<form method="post">
+
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" }) <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" }) <br />
+    <button class="btn btn-success"> Submit </button>
+    <a href="/Certifications/DeleteCertification/@ViewBag.d/" class="btn btn-danger"> Delete</a>
+</form>
+

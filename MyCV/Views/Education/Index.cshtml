@@ -1,0 +1,35 @@
+﻿@using MyCV.Models.Entity
+@model List<Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Education</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Header</th>
+        <th>Title 1</th>
+        <th>Title 2</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Header</td>
+    <td>@item.LowerTitle1</td>
+    <td>@item.LowerTitle2</td>
+    <td>@item.Date</td>
+    <td><a href="/Education/DeleteEducation/@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete </a></td>
+    <td> <a href="/Education/UpdateEducation/@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i>Edit</a></td>
+</tr>
+    }
+
+</table>
+<a href="/Education/AddEducation" class="btn btn-primary">Add New Education</a>
+

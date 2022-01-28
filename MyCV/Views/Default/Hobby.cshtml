@@ -1,0 +1,14 @@
+﻿@using MyCV.Models.Entity
+@model List<Hobies>
+
+
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Interests</h2>
+    @foreach (var item in Model)
+    {
+        <br />
+        <h3 class="mb-0"> @item.Header</h3>
+        <p >@item.Title </p>
+    }
+    </div>

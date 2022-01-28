@@ -1,0 +1,21 @@
+﻿@model MyCV.Models.Entity.Education
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Add Education Page </h4>
+<form method="post">
+
+    @Html.Label("Header")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" }) <br />
+    @Html.Label("Title 1")
+    @Html.TextBoxFor(x => x.LowerTitle1, new { @class = "form-control" }) <br />
+    @Html.Label("Title 2")
+    @Html.TextBoxFor(x => x.LowerTitle2, new { @class = "form-control" }) <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" }) <br />
+    <button class="btn btn-info"> Submit </button>
+</form>
+

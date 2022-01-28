@@ -1,0 +1,18 @@
+﻿@model MyCV.Models.Entity.Hobies
+@{
+    ViewBag.Title = "AddHobby";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br /> 
+
+<h2>Add New Hobby</h2>
+<br /> 
+<form method="post">
+   
+    @Html.Label("Header")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })  <br />
+    @Html.Label("Title ")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })  <br />
+
+    <button class="btn btn-info">Submit</button>
+</form>

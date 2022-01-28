@@ -1,0 +1,47 @@
+﻿@using MyCV.Models.Entity
+@model List<Hobies>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <!DOCTYPE html>
+    <html>
+
+    <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
+            <section class="content">
+                <div class="container-fluid">
+                    <br />
+                    <div class="col-md-12">
+
+                        <h2>Hobby Edit Page</h2>
+
+
+                    </div> <br />
+                    <a href="/Hobies/AddHobby/" class="btn btn-primary"> Add New Hobbies</a>
+                    <form method="post">
+
+                        @foreach (var item in Model)
+                        {
+
+                            <label>Header</label>
+                            <textarea rows="2" class="form-control" name="Header">@item.Header</textarea>
+                            <br />
+                            <label>Title</label>
+                            <textarea rows="5" class="form-control" name="Title">@item.Title</textarea>
+                            <br />
+                            <a href="/Hobies/UpdateHobby/@item.Id/" class="btn btn-warning">Edit</a>
+                            <a href="/Hobies/DeleteHobby/@item.Id/" class="btn btn-danger">Delete</a>
+                            <br />
+                        }
+
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </body>
+</html>
+</div>

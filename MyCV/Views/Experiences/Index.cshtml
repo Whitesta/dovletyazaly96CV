@@ -1,0 +1,35 @@
+﻿@using MyCV.Models.Entity
+@model List<Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>My Experiences</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Header</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    @foreach(var item in Model)
+
+    {
+       
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Header</td>
+            <td>@item.LowerTitle</td>
+            <td>@item.Date</td>
+            <td><a href="/Experiences/DeleteExperience/@item.Id" class="btn btn-warning">Delete</a></td>
+            <td><a href="/Experiences/GetExperience/@item.Id" class="btn btn-danger">Edit</a> </td>
+        </tr>
+    }
+
+</table>
+<a href="/Experiences/AddExperience" class="btn btn-primary">Add New Experience</a>
+

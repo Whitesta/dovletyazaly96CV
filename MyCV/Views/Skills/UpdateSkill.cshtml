@@ -1,0 +1,17 @@
+﻿@model MyCV.Models.Entity.Skills
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Update Skills Page </h4>
+<form method="post">
+
+    @Html.Label("Skill")
+    @Html.TextBoxFor(x => x.Skill, new { @class = "form-control" }) <br />
+    @Html.Label("Progress")
+    @Html.TextBoxFor(x => x.Progress, new { @class = "form-control" }) <br />
+    <button class="btn btn-success"> Submit </button>
+</form>
+
